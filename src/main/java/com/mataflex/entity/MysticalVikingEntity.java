@@ -44,7 +44,7 @@ public class MysticalVikingEntity extends Piglin {
         if (this.random.nextFloat() < 0.8f) {
             return CustomSounds.VIKING_AMBIENT;
         }
-        return super.getAmbientSound();
+        return CustomSounds.VIKING_AMBIENT_2;
     }
 
     @Override
