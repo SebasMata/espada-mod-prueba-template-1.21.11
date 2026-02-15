@@ -1,8 +1,6 @@
 package com.mataflex;
 
-import com.mataflex.entity.MysticalVikingEntity;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -11,9 +9,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.illager.Pillager;
-import net.minecraft.world.entity.monster.zombie.ZombifiedPiglin;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -51,24 +46,23 @@ public class ModItems {
             ToolMaterial.DIAMOND.repairItems()
     );
 
-
     // MYSTICAL TOOLS
     public static final Item MYSTICAL_SWORD = register(
             "mystical_sword",
             Item::new,
-            new Item.Properties().sword(MYSTICAL_TOOL_MATERIAL, 17.5f, -2.4f)
+            new Item.Properties().sword(MYSTICAL_TOOL_MATERIAL, 15f, -2.0f)
     );
 
     public static final Item MYSTICAL_AXE = register (
             "mystical_axe",
             Item::new,
-            new Item.Properties().axe(MYSTICAL_TOOL_MATERIAL, 24.5f, -5.0f)
+            new Item.Properties().axe(MYSTICAL_TOOL_MATERIAL, 18.5f, -3.0f)
     );
 
     public static final Item MYSTICAL_PICKAXE = register (
             "mystical_pickaxe",
             Item::new,
-            new Item.Properties().pickaxe(MYSTICAL_TOOL_MATERIAL, 4f, -2.8f)
+            new Item.Properties().pickaxe(MYSTICAL_TOOL_MATERIAL, 4.5f, -2.8f)
     );
 
     public static <GenericItem extends Item> GenericItem register(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
