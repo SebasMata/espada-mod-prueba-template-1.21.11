@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.minecraft.world.entity.monster.zombie.ZombifiedPiglin;
+import net.minecraft.world.entity.monster.piglin.Piglin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,10 +38,11 @@ public class EspadaModPrueba implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 		ModItems.initialize();
+		ModCreativeTabs.register();
 
 		FabricDefaultAttributeRegistry.register(
 				MYSTICAL_VIKING,
-				ZombifiedPiglin.createAttributes()
+				Piglin.createAttributes()
 		);
 
 		CustomSounds.initialize();

@@ -9,9 +9,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
@@ -37,6 +39,14 @@ public class ModItems {
             new Item.Properties().food(REGENERATION_FOOD_COMPONENT, REGENARATION_FOOD_CONSUMABLE_COMPONENT));
 
     public static final Item MYSTICAL_INGOT = register("mystical_ingot", Item::new, new Item.Properties());
+
+    public static final Item OBSIDIAN_ROD = register("obsidian_rod", Item::new, new Item.Properties());
+
+    public static final SpawnEggItem VIKING_SPAWN_EGG = register(
+            "viking_spawn_egg",
+            SpawnEggItem::new,
+            new Item.Properties().spawnEgg(EspadaModPrueba.MYSTICAL_VIKING)
+    );
 
     // MYSTICAL TOOL MATERIAL
     public static final ToolMaterial MYSTICAL_TOOL_MATERIAL = new ToolMaterial(
@@ -67,7 +77,7 @@ public class ModItems {
             new Item.Properties().pickaxe(MYSTICAL_TOOL_MATERIAL, 4.5f, -2.8f)
     );
 
-    public static final Item MYSTICAL_SHIOVEL = register (
+    public static final Item MYSTICAL_SHOVEL = register (
             "mystical_shovel",
             Item::new,
             new Item.Properties().shovel(MYSTICAL_TOOL_MATERIAL, 4.5f, -3.0f)
@@ -87,12 +97,20 @@ public class ModItems {
     }
 
     public static void initialize() {
+
+        // ITEMS
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.accept(ModItems.SUSPICIOUS_SUBSTANCE));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS)
                 .register((itemGroup) -> itemGroup.accept(ModItems.MYSTICAL_ESSENCE));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.accept(ModItems.MYSTICAL_INGOT));
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
+                .register((itemGroup) -> itemGroup.accept(ModItems.OBSIDIAN_ROD));
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS)
+                .register(itemGroup -> itemGroup.accept(ModItems.VIKING_SPAWN_EGG));
+
+        // TOOLS
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(ModItems.MYSTICAL_SWORD));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
@@ -100,7 +118,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
                 .register((itemGroup) -> itemGroup.accept(ModItems.MYSTICAL_PICKAXE));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
-                .register((itemGroup) -> itemGroup.accept(ModItems.MYSTICAL_SHIOVEL));
+                .register((itemGroup) -> itemGroup.accept(ModItems.MYSTICAL_SHOVEL));
     }
 
 }

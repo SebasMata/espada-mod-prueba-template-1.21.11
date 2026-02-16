@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
@@ -44,6 +45,18 @@ public class MysticalVikingEntity extends Piglin {
         }
     }
 
+    @Override
+    protected void dropCustomDeathLoot(@NonNull ServerLevel serverLevel, @NonNull DamageSource damageSource, boolean bl) {
+        super.dropCustomDeathLoot(serverLevel, damageSource, bl);
+
+        if (this.random.nextFloat() < 0.10f) {
+            this.spawnAtLocation(serverLevel, new ItemStack(ModItems.MYSTICAL_ESSENCE, 1));
+        } else if (this.random.nextFloat() < 0.65f) {
+            this.spawnAtLocation(serverLevel, new ItemStack(Items.BONE, 3));
+        } else {
+            this.spawnAtLocation(serverLevel, new ItemStack(Items.IRON_INGOT, 1));
+        }
+    }
     @Override
     protected @NonNull Brain<?> makeBrain(@NonNull Dynamic<?> dynamic) {
         Brain<Piglin> piglinBrain = this.brainProvider().makeBrain(dynamic);
