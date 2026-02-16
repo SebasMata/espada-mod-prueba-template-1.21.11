@@ -1,4 +1,4 @@
-## Espada Mod Prueba | Designed for Fabric
+## Valhalla Echoes | Designed for Fabric
 
 **Minecraft:** Java version 1.21.11
 
