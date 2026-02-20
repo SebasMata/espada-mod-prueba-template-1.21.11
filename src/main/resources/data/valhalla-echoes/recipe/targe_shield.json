@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#e#",
+        "###",
+        " # "
+    ],
+    "key": {
+        "#": "#minecraft:planks",
+        "e": "valhalla-echoes:mystical_ingot"
+    },
+    "result": {
+        "id": "valhalla-echoes:targe_shield",
+        "count": 1
+    }
+}

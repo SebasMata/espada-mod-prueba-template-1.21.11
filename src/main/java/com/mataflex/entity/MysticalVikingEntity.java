@@ -1,7 +1,7 @@
 package com.mataflex.entity;
 
-import com.mataflex.CustomSounds;
-import com.mataflex.ModItems;
+import com.mataflex.sound.CustomSounds;
+import com.mataflex.item.ModItems;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -57,6 +57,7 @@ public class MysticalVikingEntity extends Piglin {
             this.spawnAtLocation(serverLevel, new ItemStack(Items.IRON_INGOT, 1));
         }
     }
+
     @Override
     protected @NonNull Brain<?> makeBrain(@NonNull Dynamic<?> dynamic) {
         Brain<Piglin> piglinBrain = this.brainProvider().makeBrain(dynamic);
@@ -94,7 +95,7 @@ public class MysticalVikingEntity extends Piglin {
     }
 
     @Override
-    protected @NonNull SoundEvent getHurtSound(DamageSource damageSource) {
+    protected @NonNull SoundEvent getHurtSound(@NonNull DamageSource damageSource) {
         return CustomSounds.VIKING_GRUNT;
     }
 

@@ -1,6 +1,8 @@
 package com.mataflex;
 
 import com.mataflex.entity.MysticalVikingEntity;
+import com.mataflex.item.ModItems;
+import com.mataflex.sound.CustomSounds;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -36,7 +38,7 @@ public class ValhallaEchoes implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Welcome to Valhalla Echoes! Initializing mod...");
 		ModItems.initialize();
 		ModCreativeTabs.register();
 

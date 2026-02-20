@@ -1,5 +1,6 @@
-package com.mataflex;
+package com.mataflex.sound;
 
+import com.mataflex.ValhallaEchoes;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -25,6 +26,6 @@ public class CustomSounds {
     }
 
     public static void initialize() {
-        ValhallaEchoes.LOGGER.info("Registrando sonidos de vikingo...");
+        ValhallaEchoes.LOGGER.info("Initializing custom sounds...");
     }
 }
