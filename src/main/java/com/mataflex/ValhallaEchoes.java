@@ -38,7 +38,7 @@ public class ValhallaEchoes implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Welcome to Valhalla Echoes! Initializing mod...");
 		ModItems.initialize();
 		ModCreativeTabs.register();
 

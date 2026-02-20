@@ -26,6 +26,6 @@ public class CustomSounds {
     }
 
     public static void initialize() {
-        ValhallaEchoes.LOGGER.info("Registrando sonidos de vikingo...");
+        ValhallaEchoes.LOGGER.info("Initializing custom sounds...");
     }
 }
