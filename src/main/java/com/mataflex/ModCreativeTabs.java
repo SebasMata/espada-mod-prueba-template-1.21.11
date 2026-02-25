@@ -39,6 +39,7 @@ public class ModCreativeTabs {
                             output.accept(ModItems.MYSTICAL_CHESTPLATE);
                             output.accept(ModItems.MYSTICAL_LEGGINGS);
                             output.accept(ModItems.MYSTICAL_BOOTS);
+                            output.accept(ModItems.HORNED_HELMET);
                         })
                         .build()
         );
