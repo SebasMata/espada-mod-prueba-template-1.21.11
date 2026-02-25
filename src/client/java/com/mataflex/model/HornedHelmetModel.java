@@ -12,9 +12,11 @@ public class HornedHelmetModel extends HumanoidModel<HumanoidRenderState> {
     }
 
     public static LayerDefinition createArmorLayer() {
+        // USAMOS LA BASE OFICIAL: Esto crea las 7 partes con los nombres correctos automáticamente
         MeshDefinition meshdefinition = HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F);
         PartDefinition partdefinition = meshdefinition.getRoot();
 
+        // REEMPLAZAMOS LA CABEZA: Aquí ponemos tus cuernos
         PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create()
                         .texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F)),
                 PartPose.offset(0.0F, 0.0F, 0.0F));
@@ -30,6 +32,15 @@ public class HornedHelmetModel extends HumanoidModel<HumanoidRenderState> {
                         .texOffs(28, 22).addBox(6.0F, -7.0F, -3.0F, 3.0F, 1.0F, 2.0F)
                         .texOffs(30, 22).addBox(7.0F, -8.0F, -5.0F, 1.0F, 2.0F, 2.0F),
                 PartPose.offset(-1.0F, 0.0F, 0.0F));
+
+        // VACIAR LAS DEMÁS PARTES: Las dejamos registradas pero sin cubos
+        // Así el juego las encuentra, no crashea, pero no se ve el pecho blanco
+        partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create(), PartPose.ZERO);
 
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
