@@ -27,13 +27,14 @@ public class ValhallaEchoesClient implements ClientModInitializer {
 				com.mataflex.model.HornedHelmetModel::createArmorLayer
 		);
 
-		ArmorRenderer.register((poseStack, submitNodeCollector, itemStack, humanoidRenderState, equipmentSlot, light, humanoidModel) -> {
+		net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer.register((poseStack, submitNodeCollector, itemStack, humanoidRenderState, equipmentSlot, light, humanoidModel) -> {
 
 			com.mataflex.model.HornedHelmetModel helmetModel = new com.mataflex.model.HornedHelmetModel(
 					net.minecraft.client.Minecraft.getInstance().getEntityModels().bakeLayer(HORNED_HELMET_LAYER)
 			);
 
 			helmetModel.head.visible = true;
+			helmetModel.hat.visible = false;
 
 			Identifier texture = Identifier.fromNamespaceAndPath(
 					ValhallaEchoes.MOD_ID,
@@ -42,21 +43,24 @@ public class ValhallaEchoesClient implements ClientModInitializer {
 
 			net.minecraft.client.renderer.rendertype.RenderType renderLayer = helmetModel.renderType(texture);
 
-			net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer.submitTransformCopyingModel(
-					humanoidModel,
-					humanoidRenderState,
-					helmetModel,
-					humanoidRenderState,
-					true,
-					submitNodeCollector,
-					poseStack,
-					renderLayer,
-					light,
-					net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY,
-					0xFFFFFFFF,
-					null
-			);
+            net.minecraft.client.renderer.OrderedSubmitNodeCollector orderedCollector = (net.minecraft.client.renderer.OrderedSubmitNodeCollector) submitNodeCollector;
+            ArmorRenderer.submitTransformCopyingModel(
+                    humanoidModel,
+                    humanoidRenderState,
+                    helmetModel,
+                    humanoidRenderState,
+                    true,
+                    orderedCollector,
+                    poseStack,
+                    renderLayer,
+                    light,
+                    net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY,
+                    0xFFFFFFFF,
+                    null,
+                    0,
+                    null
+            );
 
-		}, com.mataflex.item.ModItems.HORNED_HELMET);
+        }, com.mataflex.item.ModItems.HORNED_HELMET);
 	}
 }
