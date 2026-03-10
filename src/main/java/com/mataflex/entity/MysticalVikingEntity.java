@@ -35,7 +35,6 @@ public class MysticalVikingEntity extends Piglin {
     public MysticalVikingEntity(EntityType<? extends Piglin> entityType, Level level) {
         super(entityType, level);
         this.setImmuneToZombification(false);
-        System.out.println("¡Un vikingo ha nacido!");
     }
 
     @Override
