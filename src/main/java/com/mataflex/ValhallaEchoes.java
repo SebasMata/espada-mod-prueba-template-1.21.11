@@ -62,6 +62,7 @@ public class ValhallaEchoes implements ModInitializer {
 				MysticalVikingEntity::checkVikingSpawnRules
 		);
 
+
 		BiomeModifications.addSpawn(
 				BiomeSelectors.tag(BiomeTags.IS_TAIGA).or(BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN)),
 				MobCategory.MONSTER,

@@ -21,6 +21,7 @@ import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
@@ -125,8 +126,8 @@ public class MysticalVikingEntity extends Piglin {
         return this.mysticalVikingBrain;
     }
 
-    public static boolean checkVikingSpawnRules(EntityType<? extends Monster> entityType, ServerLevelAccessor serverLevelAccessor, EntitySpawnReason entitySpawnReason, BlockPos blockPos, RandomSource randomSource) {
-        return Monster.checkMonsterSpawnRules(entityType, serverLevelAccessor, entitySpawnReason, blockPos, randomSource);
+    public static boolean checkVikingSpawnRules(EntityType<? extends Monster> type, LevelAccessor world, EntitySpawnReason spawnReason, BlockPos pos, RandomSource random) {
+        return Monster.checkAnyLightMonsterSpawnRules(type, world, spawnReason, pos, random);
     }
 
     @Override
