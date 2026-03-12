@@ -20,7 +20,9 @@
 
   "entity.valhalla-echoes.mystical_viking": "Mystical Viking",
 
-  "itemGroup.tumodid.mystical_tab": "Valhalla Echoes"
+  "itemGroup.tumodid.mystical_tab": "Valhalla Echoes",
+
+  "itemTooltip.valhalla-echoes.horned_helmet": "Valhalla Retribution: 85% chances to stab."
 
 }
 

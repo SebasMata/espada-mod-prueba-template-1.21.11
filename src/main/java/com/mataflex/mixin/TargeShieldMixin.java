@@ -28,8 +28,8 @@ public abstract class TargeShieldMixin {
 
 			if (helmet.is(ModItems.HORNED_HELMET) && source.getDirectEntity() instanceof LivingEntity attacker) {
 
-				if (player.getRandom().nextFloat() < 0.35f) {
-					attacker.hurtServer(level, level.damageSources().thorns(player), 2.0f);
+				if (player.getRandom().nextFloat() < 0.85f) {
+					attacker.hurtServer(level, level.damageSources().thorns(player), 3.0f);
 					level.playSound(null, player.getX(), player.getY(), player.getZ(),
 							CustomSounds.HORNED_HELMET_STAB, SoundSource.PLAYERS, 1.0F, 1.0F);
 				}

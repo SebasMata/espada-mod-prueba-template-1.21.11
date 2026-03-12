@@ -1,6 +1,7 @@
 package com.mataflex.item;
 
 import com.mataflex.ValhallaEchoes;
+import com.mataflex.item.custom.HornedHelmetItem;
 import com.mataflex.item.custom.MysticalShovelItem;
 import com.mataflex.item.custom.TargeShieldItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -22,6 +23,19 @@ import net.minecraft.world.item.equipment.ArmorType;
 import java.util.function.Function;
 
 public class ModItems {
+
+    public static <GenericItem extends Item> GenericItem register(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
+        // Create the item key.
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ValhallaEchoes.MOD_ID, name));
+
+        // Create the item instance.
+        GenericItem item = itemFactory.apply(settings.setId(itemKey));
+
+        // Register the item.
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+
+        return item;
+    }
 
     // ITEMS
     public static final Item SUSPICIOUS_SUBSTANCE = register("suspicious_substance", Item::new, new Item.Properties());
@@ -88,19 +102,6 @@ public class ModItems {
                     .rarity(Rarity.EPIC)
     );
 
-    public static <GenericItem extends Item> GenericItem register(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
-        // Create the item key.
-        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ValhallaEchoes.MOD_ID, name));
-
-        // Create the item instance.
-        GenericItem item = itemFactory.apply(settings.setId(itemKey));
-
-        // Register the item.
-        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
-
-        return item;
-    }
-
     // Targe shield
     public static final Item TARGE_SHIELD = register(
             "targe_shield",
@@ -147,14 +148,36 @@ public class ModItems {
                     .rarity(Rarity.EPIC)
     );
 
-    public static final Item HORNED_HELMET = register(
-            "horned_helmet",
-            Item::new,
+//    public static final Item HORNED_HELMET = register(
+//            "horned_helmet",
+//            Item::new,
+//            new Item.Properties()
+//                    .durability(3196)
+//                    .humanoidArmor(ModArmorMaterials.MYSTICAL, ArmorType.HELMET)
+//                    .rarity(Rarity.EPIC)
+//    );
+
+    public static final Item HORNED_HELMET = registerHornedHelmet(
             new Item.Properties()
+                    .durability(3196)
                     .humanoidArmor(ModArmorMaterials.MYSTICAL, ArmorType.HELMET)
-                    .durability(2048)
                     .rarity(Rarity.EPIC)
     );
+
+    public static HornedHelmetItem registerHornedHelmet(Item.Properties properties) {
+
+        HornedHelmetItem helmetItem;
+
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ValhallaEchoes.MOD_ID, "horned_helmet"));
+
+        properties.setId(itemKey);
+
+        helmetItem = new HornedHelmetItem(properties);
+
+        Registry.register(BuiltInRegistries.ITEM, itemKey, helmetItem);
+
+        return helmetItem;
+    }
 
     public static void initialize() {
 
