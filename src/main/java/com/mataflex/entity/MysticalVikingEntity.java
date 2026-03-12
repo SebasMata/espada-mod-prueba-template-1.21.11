@@ -38,7 +38,7 @@ public class MysticalVikingEntity extends Piglin {
     }
 
     @Override
-    protected void populateDefaultEquipmentSlots(net.minecraft.util.RandomSource randomSource, net.minecraft.world.DifficultyInstance difficultyInstance) {
+    protected void populateDefaultEquipmentSlots(net.minecraft.util.RandomSource randomSource, net.minecraft.world.@NonNull DifficultyInstance difficultyInstance) {
         this.setItemSlot(net.minecraft.world.entity.EquipmentSlot.MAINHAND, new net.minecraft.world.item.ItemStack(randomSource.nextInt(20) == 0 ? com.mataflex.item.ModItems.MYSTICAL_SWORD : com.mataflex.item.ModItems.MYSTICAL_AXE));
 
         if (!this.isBaby() && randomSource.nextFloat() < 0.35F) {
@@ -137,7 +137,7 @@ public class MysticalVikingEntity extends Piglin {
     }
 
     @Override
-    public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, @NonNull DifficultyInstance difficultyInstance, EntitySpawnReason entitySpawnReason, @Nullable SpawnGroupData spawnGroupData) {
+    public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, @NonNull DifficultyInstance difficultyInstance, @NonNull EntitySpawnReason entitySpawnReason, @Nullable SpawnGroupData spawnGroupData) {
         RandomSource randomSource = serverLevelAccessor.getRandom();
 
         if (entitySpawnReason != EntitySpawnReason.STRUCTURE) {
