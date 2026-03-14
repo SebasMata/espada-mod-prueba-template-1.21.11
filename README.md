@@ -29,5 +29,10 @@ You can download the mod directly here:
 * [v0.2.3-pre-alpha](https://github.com/SebasMata/valhalla-echoes-1.21.11/releases/tag/v0.2.3-pre-alpha)
 * [v0.2.4-pre-alpha](https://github.com/SebasMata/valhalla-echoes-1.21.11/releases/tag/v0.2.4-pre-alpha)
 
+### Install guide
+>1) Install the [Fabric modloader](https://fabricmc.net).
+>1) Download and put the `valhalla-echoes-v0.x.jar` file into `.minecraft/mods` folder.
+>1) You're ready to play!
+
 ## Notes
 Private project designed to learn how to code Minecraft Mods.
