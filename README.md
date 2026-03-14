@@ -1,16 +1,11 @@
 ## <img width="1920" height="540" alt="logo_ve_large" src="https://github.com/user-attachments/assets/7156b223-a268-4f55-a238-326ec4148244" />
 
-### Designed for Minecraft Java & Fabric
-
-![img_2.png](img_2.png)
-
-**Minecraft:** Java version 1.21.11
-
-
-![img_1.png](img_1.png)
-
+## **Designed for Minecraft Java 1.21.11 & Fabric**
+![Fabric logo](https://cdn.modrinth.com/data/cached_images/513035d1231a86dff137c74e04a5e64633593f10.png)
 
 **Fabric version:** At least 0.18.4
+
+## Mod Info
 
 This mod adds a new mob: **Mystical Vikings**. They have overpowered weapons and tools you should try to get by farming a lot of Mystical Vikings.
 
