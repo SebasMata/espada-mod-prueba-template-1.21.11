@@ -20,5 +20,8 @@
 
   "entity.valhalla-echoes.mystical_viking": "Vikingo místico",
 
-  "itemGroup.tumodid.mystical_tab": "Ecos del Valhalla"
+  "itemGroup.tumodid.mystical_tab": "Ecos del Valhalla",
+
+  "itemTooltip.valhalla-echoes.horned_helmet": "Retribución de Valhalla: 85% de posibilidades de apuñalar."
+
 }
