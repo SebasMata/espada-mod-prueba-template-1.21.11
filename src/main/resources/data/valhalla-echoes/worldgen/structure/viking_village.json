@@ -15,7 +15,7 @@
     }
   },
   "biomes": "#minecraft:has_structure/village_snowy",
-  "size": 7,
+  "size": 10,
   "start_pool": "valhalla-echoes:viking_center_pool",
   "start_height": {
     "absolute": 0
