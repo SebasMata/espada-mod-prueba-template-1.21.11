@@ -29,10 +29,7 @@ You can check the mod's website on Modrinth here:
 
 ### Download
 You can download the mod directly here:
-* [v0.2.1-pre-alpha](https://github.com/SebasMata/valhalla-echoes-1.21.11/releases/tag/v0.2.1-pre-alpha)
-* [v0.2.2-pre-alpha](https://github.com/SebasMata/valhalla-echoes-1.21.11/releases/tag/v0.2.2-pre-alpha)
-* [v0.2.3-pre-alpha](https://github.com/SebasMata/valhalla-echoes-1.21.11/releases/tag/v0.2.3-pre-alpha)
-* [v0.2.4-pre-alpha](https://github.com/SebasMata/valhalla-echoes-1.21.11/releases/tag/v0.2.4-pre-alpha)
+* Latest version: [v0.3.0-alpha](https://github.com/SebasMata/valhalla-echoes-1.21.11/releases/tag/v0.3.0-alpha)
 
 ### Install guide
 >1) Install the [Fabric modloader](https://fabricmc.net).
