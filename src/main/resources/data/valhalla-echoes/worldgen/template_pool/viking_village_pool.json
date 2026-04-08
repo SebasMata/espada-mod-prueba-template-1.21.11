@@ -32,6 +32,15 @@
     {
       "weight": 1,
       "element": {
+        "location": "valhalla-echoes:social_viking_hut",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
         "location": "valhalla-echoes:street_connector",
         "processors": "minecraft:empty",
         "projection": "terrain_matching",
