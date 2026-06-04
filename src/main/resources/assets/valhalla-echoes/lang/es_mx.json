@@ -19,9 +19,16 @@
   "item.valhalla-echoes.mystical_boots": "Botas místicas",
 
   "entity.valhalla-echoes.mystical_viking": "Vikingo místico",
+  "entity.valhalla-echoes.draugr": "Draugr",
+
+  "item.valhalla-echoes.draugr_spawn_egg": "Huevo generador de draugr",
 
   "itemGroup.tumodid.mystical_tab": "Ecos del Valhalla",
 
-  "itemTooltip.valhalla-echoes.horned_helmet": "Retribución de Valhalla: 85% de posibilidades de apuñalar."
+  "itemTooltip.valhalla-echoes.horned_helmet": "Retribución de Valhalla: 85% de posibilidades de apuñalar.",
 
+  "subtitles.valhalla-echoes.draugr_ambient": "Draugr resuena",
+  "subtitles.valhalla-echoes.draugr_hurt": "Draugr duele",
+  "subtitles.valhalla-echoes.draugr_death": "Draugr muere",
+  "subtitles.valhalla-echoes.draugr_attack": "Draugr ataca"
 }

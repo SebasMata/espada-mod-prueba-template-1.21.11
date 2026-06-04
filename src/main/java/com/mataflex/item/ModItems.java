@@ -63,6 +63,12 @@ public class ModItems {
             new Item.Properties().spawnEgg(ValhallaEchoes.MYSTICAL_VIKING)
     );
 
+    public static final SpawnEggItem DRAUGR_SPAWN_EGG = register(
+            "draugr_spawn_egg",
+            SpawnEggItem::new,
+            new Item.Properties().spawnEgg(ValhallaEchoes.DRAUGR)
+    );
+
     // MYSTICAL TOOL MATERIAL
     public static final ToolMaterial MYSTICAL_TOOL_MATERIAL = new ToolMaterial(
             BlockTags.INCORRECT_FOR_WOODEN_TOOL,
@@ -182,7 +188,10 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.accept(ModItems.OBSIDIAN_ROD));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS)
-                .register(itemGroup -> itemGroup.accept(ModItems.VIKING_SPAWN_EGG));
+                .register(itemGroup -> {
+                    itemGroup.accept(ModItems.VIKING_SPAWN_EGG);
+                    itemGroup.accept(ModItems.DRAUGR_SPAWN_EGG);
+                });
 
         // TOOLS
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
