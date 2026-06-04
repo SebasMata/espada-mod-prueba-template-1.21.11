@@ -29,6 +29,16 @@ public class DraugrEntity extends WitherSkeleton {
     }
 
     @Override
+    protected void populateDefaultEquipmentSlots(RandomSource randomSource, net.minecraft.world.DifficultyInstance difficultyInstance) {
+        this.setItemSlot(net.minecraft.world.entity.EquipmentSlot.MAINHAND,
+                new ItemStack(randomSource.nextBoolean() ? Items.NETHERITE_SWORD : Items.NETHERITE_AXE));
+
+        if (randomSource.nextFloat() < 0.25F) {
+            this.setItemSlot(net.minecraft.world.entity.EquipmentSlot.HEAD, new ItemStack(Items.NETHERITE_HELMET));
+        }
+    }
+
+    @Override
     protected void registerGoals() {
         com.mataflex.entity.ai.DraugrAttackGoal attackGoal = new com.mataflex.entity.ai.DraugrAttackGoal(this, 1.2, false);
         this.goalSelector.addGoal(1, attackGoal);
