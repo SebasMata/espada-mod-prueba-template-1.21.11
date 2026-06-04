@@ -21,6 +21,12 @@ public class CustomSounds {
 
     public static final SoundEvent HORNED_HELMET_STAB = registerSound("horned_helmet_stab");
 
+    // DRAUGR
+    public static final SoundEvent DRAUGR_AMBIENT = registerSound("draugr_ambient");
+    public static final SoundEvent DRAUGR_HURT = registerSound("draugr_hurt");
+    public static final SoundEvent DRAUGR_DEATH = registerSound("draugr_death");
+    public static final SoundEvent DRAUGR_ATTACK = registerSound("draugr_attack");
+
 
     private static SoundEvent registerSound(String name) {
         Identifier id = Identifier.fromNamespaceAndPath(ValhallaEchoes.MOD_ID, name);

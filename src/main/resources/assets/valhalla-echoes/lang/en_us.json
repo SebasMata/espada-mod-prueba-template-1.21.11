@@ -19,10 +19,17 @@
   "item.valhalla-echoes.mystical_boots": "Mystical Boots",
 
   "entity.valhalla-echoes.mystical_viking": "Mystical Viking",
+  "entity.valhalla-echoes.draugr": "Draugr",
+
+  "item.valhalla-echoes.draugr_spawn_egg": "Draugr Spawn Egg",
 
   "itemGroup.tumodid.mystical_tab": "Valhalla Echoes",
 
-  "itemTooltip.valhalla-echoes.horned_helmet": "Valhalla Retribution: 85% chances to stab."
+  "itemTooltip.valhalla-echoes.horned_helmet": "Valhalla Retribution: 85% chances to stab.",
 
+  "subtitles.valhalla-echoes.draugr_ambient": "Draugr rattles",
+  "subtitles.valhalla-echoes.draugr_hurt": "Draugr hurts",
+  "subtitles.valhalla-echoes.draugr_death": "Draugr dies",
+  "subtitles.valhalla-echoes.draugr_attack": "Draugr attacks"
 }
 

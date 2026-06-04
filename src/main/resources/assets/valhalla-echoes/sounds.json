@@ -64,4 +64,28 @@
     "sounds": [
       "valhalla-echoes:horned_helmet_stab"
     ]
+  },
+  "draugr_ambient": {
+    "subtitle": "subtitles.valhalla-echoes.draugr_ambient",
+    "sounds": [
+      "valhalla-echoes:draugr_ambient"
+    ]
+  },
+  "draugr_hurt": {
+    "subtitle": "subtitles.valhalla-echoes.draugr_hurt",
+    "sounds": [
+      "valhalla-echoes:draugr_hurt"
+    ]
+  },
+  "draugr_death": {
+    "subtitle": "subtitles.valhalla-echoes.draugr_death",
+    "sounds": [
+      "valhalla-echoes:draugr_death"
+    ]
+  },
+  "draugr_attack": {
+    "subtitle": "subtitles.valhalla-echoes.draugr_attack",
+    "sounds": [
+      "valhalla-echoes:draugr_attack"
+    ]
   }}

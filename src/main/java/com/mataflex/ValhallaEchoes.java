@@ -1,5 +1,6 @@
 package com.mataflex;
 
+import com.mataflex.entity.DraugrEntity;
 import com.mataflex.entity.MysticalVikingEntity;
 import com.mataflex.item.ModItems;
 import com.mataflex.sound.CustomSounds;
@@ -18,6 +19,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.monster.skeleton.WitherSkeleton;
 import net.minecraft.world.level.levelgen.Heightmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +43,21 @@ public class ValhallaEchoes implements ModInitializer {
 							))
 			);
 
+	public static final EntityType<DraugrEntity> DRAUGR =
+			Registry.register(
+					BuiltInRegistries.ENTITY_TYPE,
+					Identifier.fromNamespaceAndPath(MOD_ID, "draugr"),
+					EntityType.Builder.of(
+									DraugrEntity::new,
+									MobCategory.MONSTER
+							)
+							.sized(0.7f, 2.4f)
+							.build(ResourceKey.create(
+									Registries.ENTITY_TYPE,
+									Identifier.fromNamespaceAndPath(MOD_ID, "draugr")
+							))
+			);
+
 	@Override
 	public void onInitialize() {
 
@@ -54,6 +71,27 @@ public class ValhallaEchoes implements ModInitializer {
 		);
 
 		CustomSounds.initialize();
+
+		FabricDefaultAttributeRegistry.register(
+				DRAUGR,
+				WitherSkeleton.createAttributes()
+		);
+
+		SpawnPlacements.register(
+				DRAUGR,
+				SpawnPlacementTypes.ON_GROUND,
+				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				DraugrEntity::checkDraugrSpawnRules
+		);
+
+		BiomeModifications.addSpawn(
+				BiomeSelectors.tag(BiomeTags.IS_TAIGA).or(BiomeSelectors.tag(BiomeTags.IS_MOUNTAIN)),
+				MobCategory.MONSTER,
+				DRAUGR,
+				30,
+				1,
+				2
+		);
 
 		SpawnPlacements.register(
 				MYSTICAL_VIKING,
